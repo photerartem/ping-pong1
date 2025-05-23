@@ -9,7 +9,7 @@ window = display.set_mode( (win_width, win_height))
 window.fill(back)
 
 game = True 
-finish - False 
+finish = False 
 clock =time.Clock()
 FPS = 60
 
@@ -53,30 +53,29 @@ class Player(GameSprite):
         if keys[K_DOWN] and self.rect.y < win_height - 80:
             self.rect.y +- self.speed
 
+racket1 = Player('rocetka.png' 30, 200, 4, 50, 150) 
+racket2 = Player('rocetka.png' 520, 200, 4, 50, 150)
+ball = Player('ball.png' 200, 200, 4, 50, 50)
+
 while game:
     for e in event.get():
         if e.type - QUIT:
             game = False
 
-if finish != True:
-    window.fill(back)
-    racket1.update_l()
-    racket2.update_r()
+    if finish != True:
+        window.fill(back)
+        racket1.update_l()
+        racket2.update_r()
 
-    racket1.reset()
-    rocetka2.reset()
-    ball.reset()
-    
-display.update()
-clock.tick(FPS)
+        racket1.reset()
+        racket2.reset()
+        ball.reset()
+        
+    display.update()
+    clock.tick(FPS)
 
 
-win_width = 700
-win_height = 500
-display.set_caption("ping pong")
-window = display.set_mode((win_width, win_height))
-Window.fill(back)
-rocetka = Player(img_hero, 5, win_height - 100, 80, 100, 10)
+
 
 
   
